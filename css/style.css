@@ -168,6 +168,12 @@ body {
     font-size: 0.9rem;
 }
 
+.flex {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Atur jarak sesuai kebutuhan */
+}
+
 @media (max-width: 500px) {
     .box {
         width: 98vw;
