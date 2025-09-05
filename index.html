@@ -6,19 +6,74 @@
     <title>Todo list</title>
 
     <link rel="stylesheet" href="css\style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
 </head>
 <body>
-    <!-- Header section -->
-    <header></header>
+    <h1 id="H1"><b>WELCOME</b></h1>
+    <div class="box">
+        <!-- Header section -->
+        <header>
+            <h1 class="text-3xl font-bold" style="color: white; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" id="HeaderBox">Todo List</h1>
+        </header>
+        
 
-    <!-- Main section -->
-    <main></main>
+        <!-- Main section -->
+        <main>
+            <!-- input, Button section -->
+            <section class="input-button">
+                <form>
+                    <input type="text" class="border rounded p-1" id="todo-input" placeholder="Add a new task..." style="color: white;" required> 
+                    <input type="date" class="border rounded p-1" id="todo-date-input" style="color: white;" required>
+                    <button type="button" class="border rounded p-1" id="todo-button-add" onclick="validateInput();" style="color: white;">+</button>
+                </form>
+                
+            </section>
 
+            <!-- Filter & Delete Button section -->
+            <section style="color: white;" class="flex justify-between">
+                <select class="btnStyle1" id="filter-select" onchange="filterTodo();">
+                    <option value="all">All</option>
+                    <option value="unfinished">Unfinished</option>
+                    <option value="finished">finished</option>
+                </select>
+
+                <button class="btnStyle2" onclick="deleteTodo();" id="delete-button">
+                    Delete All
+                </button>
+            </section>
+
+            <div class="box2">
+                <section style="color: white;" class="text-center py-2">
+                    <ul id="todo-list">
+                        <p>No task added yet</p>
+                    </ul>
+                </section>
+            </div>
+
+            
+        </main>
+
+    </div>
+    
     <!-- Footer section -->
-    <footer></footer>
+    <footer class="Footer" style="color: white;">Mini project by WildanHanif</footer>
+    <footer style="margin-top: 50px;">Note: ONLY PROTOTYPE, CANNOT SAVING DATA</footer>
 
     <!-- javascript eksternal -->
      <script src="js\script.js"></script>
+     <script>
+document.getElementById('filter-select').addEventListener('change', function() {
+    this.blur();
+});
+document.getElementById('delete-button').addEventListener('click', function() {
+    this.blur();
+});
+document.getElementById('todo-button-add').addEventListener('click', function() {
+    this.blur();
+});
+</script>
     
 </body>
 </html>
