@@ -13,6 +13,7 @@ function validateInput() {
 
 function addTodo(todo, dueDate) {
     const todoItem = { 
+        id: Date.now() + Math.random(), // id unik
         text: todo, 
         dueDate: dueDate,  
         completed: false
@@ -38,15 +39,11 @@ function filterTodo() {
 
     let filtered = [];
     if (filterValue === 'all') {
-        filtered = todoList.map((item, idx) => ({ ...item, realIndex: idx }));
+        filtered = todoList;
     } else if (filterValue === 'unfinished') {
-        filtered = todoList
-            .map((item, idx) => ({ ...item, realIndex: idx }))
-            .filter(item => !item.completed);
+        filtered = todoList.filter(item => !item.completed);
     } else if (filterValue === 'finished') {
-        filtered = todoList
-            .map((item, idx) => ({ ...item, realIndex: idx }))
-            .filter(item => item.completed);
+        filtered = todoList.filter(item => item.completed);
     }
 
     if (filtered.length === 0) {
@@ -58,8 +55,8 @@ function filterTodo() {
         const labelStyle = item.completed ? 'text-decoration: line-through; color: gray;' : '';
         todoListElement.innerHTML += `
             <li style="list-style:none; margin-bottom:8px;">
-                <input type="checkbox" id="todo-check-${item.realIndex}" ${item.completed ? 'checked' : ''} onchange="toggleTodo(${item.realIndex})">
-                <label for="todo-check-${item.realIndex}" style="${labelStyle}">${item.text} - Due ${item.dueDate}</label>
+                <input type="checkbox" id="todo-check-${item.id}" ${item.completed ? 'checked' : ''} onchange="toggleTodo('${item.id}')">
+                <label for="todo-check-${item.id}" style="${labelStyle}">${item.text} - Due ${item.dueDate}</label>
             </li>
         `;
     });
@@ -74,19 +71,22 @@ function renderTodoList() {
         return;
     }
     
-    todoList.forEach((item, index) => {
+    todoList.forEach((item) => {
         const labelStyle = item.completed ? 'text-decoration: line-through; color: gray;' : '';
         todoListElement.innerHTML += `
             <li style="list-style:none; margin-bottom:8px;">
-                <input type="checkbox" id="todo-check-${index}" ${item.completed ? 'checked' : ''} onchange="toggleTodo(${index})">
-                <label for="todo-check-${index}" style="${labelStyle}">${item.text} - Due ${item.dueDate}</label>
+                <input type="checkbox" id="todo-check-${item.id}" ${item.completed ? 'checked' : ''} onchange="toggleTodo('${item.id}')">
+                <label for="todo-check-${item.id}" style="${labelStyle}">${item.text} - Due ${item.dueDate}</label>
             </li>
         `;
     });
 }
 
-function toggleTodo(index) {
-    todoList[index].completed = !todoList[index].completed;
-    filterTodo(); // gunakan filterTodo agar tampilan sesuai filter aktif
+function toggleTodo(id) {
+    const todo = todoList.find(item => item.id == id);
+    if (todo) {
+        todo.completed = !todo.completed;
+    }
+    filterTodo();
 }
 

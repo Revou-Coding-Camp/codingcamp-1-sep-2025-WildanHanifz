@@ -70,7 +70,7 @@ body {
 .input-button form {
     display: flex;
     align-items: center;
-    gap: 6px; /* jarak antar elemen */
+    gap: 6px; 
 }
 
 .btnStyle1 {
@@ -115,7 +115,7 @@ body {
     color: white;
     border: 1.5px solid transparent;
     border-radius: 10%;
-    width: 19px;
+    width: 24px;
     height: 31px;
     font-size: 1.4rem;
     font-weight: bold;
@@ -126,7 +126,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* margin-left: 6px;  Hapus jika pakai gap di flex */
 }
 
 #todo-button-add:hover,
