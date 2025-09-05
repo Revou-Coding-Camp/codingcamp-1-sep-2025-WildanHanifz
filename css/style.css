@@ -171,7 +171,8 @@ body {
 .flex {
     display: flex;
     align-items: center;
-    gap: 10px; /* Atur jarak sesuai kebutuhan */
+    size: 90%;
+    gap: 10px; 
 }
 
 @media (max-width: 500px) {
