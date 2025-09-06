@@ -220,13 +220,13 @@ body {
     #todo-button-add:focus {
         background-color: #7c3aed;
         border-color: #a937dd;
-        transform: scale(1.02); /* Sebelumnya 1.12 */
-        box-shadow: 0 0 8px #a855f7; /* Sebelumnya 0 0 16px */
+        transform: scale(1.02); 
+        box-shadow: 0 0 8px #a855f7; 
   }
 
     #todo-button-add:active {
-        transform: scale(0.98); /* Sebelumnya 0.96 */
-        box-shadow: 0 0 4px #7c3aed; /* Lebih lembut */
+        transform: scale(0.98); 
+        box-shadow: 0 0 4px #7c3aed; 
   }
     .btnStyle1,
     .btnStyle2 {

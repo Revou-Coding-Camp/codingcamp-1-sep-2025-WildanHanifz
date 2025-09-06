@@ -13,7 +13,7 @@ function validateInput() {
 
 function addTodo(todo, dueDate) {
     const todoItem = { 
-        id: Date.now() + Math.random(), // id unik
+        id: Date.now() + Math.random(), 
         text: todo, 
         dueDate: dueDate,  
         completed: false
