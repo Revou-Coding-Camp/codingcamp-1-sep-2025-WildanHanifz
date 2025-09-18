@@ -9,7 +9,7 @@ body {
 }
 
 #H1 {
-    color: white;
+    color: rgb(250, 248, 248);
     text-align: center;
     margin-bottom: 20px;
     font-size: 2.5rem;
@@ -18,7 +18,7 @@ body {
 }
 
 #HeaderBox {
-    background-color: #32083a;
+    background-color: #313632;
     text-align: center;
     border-radius: 19px;
     margin-bottom: 30px;
@@ -26,7 +26,7 @@ body {
 }
 
 .box {
-    background-color: rgba(107, 0, 107, 0.938);
+    background-color: rgba(40, 40, 40, 0.938);
     padding: 20px;
     width: 410px;
     border-radius: 10px;
